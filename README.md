@@ -20,7 +20,7 @@ docker network create mynetwork
 docker container run --name php -d -v $(pwd)/website/:/var/www/html/ --network mynetwork --restart always php:fpm-alpine3.15
 
 ## 6. Create default.conf using the below contents
-
+```
 server {
     listen 80;
     return 301 https://seblog.tech;
@@ -56,7 +56,7 @@ server {
         fastcgi_param SCRIPT_NAME $fastcgi_script_name;
   }
 }
-
+```
 Replace seblog.tech with your domain name
 
 ## 7. Create nginx container
